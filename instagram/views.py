@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def welcome(request):
     return HttpResponse('Welcome to my Instagram Clone')
+
+def home(request):
+    return HttpResponse('lets ride fun with simple insta')
