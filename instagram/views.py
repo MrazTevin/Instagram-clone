@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def welcome(request):
-    return HttpResponse('Welcome to my Instagram Clone')
+    return render(request,'index.html')
 
 def home(request):
     return HttpResponse('lets ride fun with simple insta')
