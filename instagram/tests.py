@@ -13,4 +13,10 @@ class ImageTestClass(TestCase):
     def test_save_method(self):
         self.family.save_image()
         image = Image.objects.all()
-        self.assertTrue(len(image) > 0)     
+        self.assertTrue(len(image) > 0) 
+    
+    def test_delete_method(self):
+        self.family.save_image()
+        self.family.delete()
+        image = Image.objects.all() 
+        self.assertTrue(isinstance(self.delete,image))
