@@ -1,9 +1,11 @@
 from django.test import TestCase
 from .models import Image,tags
 # Create your tests here.
-def setUp(self):
-    self.family = Image(image_name ='Family',image_caption = 'I love you daddy', comments='You two look amazing in blue')
+class ImageTestClass(TestCase):
+    # Set up method
+    def setUp(self):
+        self.family = Image(image_name = 'Family',image_caption='hanging out with my two lovely kids',comments='awesome')
 
-# testing instance
-def test_instance(self):
-    self.assertTrue(isinstance(self.family,Image))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.family,Image))
+    
