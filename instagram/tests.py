@@ -13,4 +13,4 @@ class ImageTestClass(TestCase):
     def test_save_method(self):
         self.family.save_image()
         image = Image.objects.all()
-        self.assertTrue(len(image) < 0)     
+        self.assertTrue(len(image) > 0)     
