@@ -20,8 +20,8 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
-        
+
     @classmethod
-    def update_caption(self):
-        self.image_caption.update()
+    def update_caption(cls):
+        return cls.objects.update()
   
