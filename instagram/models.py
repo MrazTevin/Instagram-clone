@@ -24,4 +24,8 @@ class Image(models.Model):
     @classmethod
     def update_caption(cls):
         return cls.objects.update()
-  
+   
+    @classmethod
+    def image(cls):
+       return cls.objects.get(id=1)
+   
