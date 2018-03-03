@@ -21,3 +21,6 @@ class ImageTestClass(TestCase):
         self.family.delete_image()
         image = Image.objects.all() 
         self.assertFalse(image)
+    
+    def test_update_caption(self):
+        
