@@ -28,7 +28,7 @@ class ImageTestClass(TestCase):
         self.hilarious.save_image()
         self.gorgeous.delete_image()
         self.hilarious.update_caption()
-        # image = Image.objects.all()
-        self.assertEqual(new_caption='hilarious')
+        image = Image.objects.all()
+        self.assertEqual(True,image)
 
         
