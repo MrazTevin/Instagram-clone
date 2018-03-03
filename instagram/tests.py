@@ -16,7 +16,8 @@ class ImageTestClass(TestCase):
         self.assertTrue(len(image) > 0) 
     
     def test_delete_method(self):
+        self.family = Image(image_name='family')
         self.family.save_image()
-        self.family.delete()
+        self.family.delete_image()
         image = Image.objects.all() 
-        self.assertTrue(isinstance(self.delete,image))
+        self.assertFalse(image)
