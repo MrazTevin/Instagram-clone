@@ -21,7 +21,7 @@ class ImageTestClass(TestCase):
         self.family.delete_image()
         image = Image.objects.all() 
         self.assertFalse(image)
-    
+        
     # def test_update_caption(self):
     #     self.hilarious = Image.objects.create(image_caption='hilarious')
     #     self.gorgeous = Image.objects.create(image_caption='gorgeous')
@@ -30,5 +30,7 @@ class ImageTestClass(TestCase):
     #     self.hilarious.update_caption()
     #     image = Image.objects.all()
     #     self.assertEqual(True,image)
-
-        
+    
+    def get_image(self,id):
+        image = Image.objects.all()
+        return image[:1]
