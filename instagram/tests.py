@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Image,tags
+from .models import Image,tag
 # Create your tests here.
 class ImageTestClass(TestCase):
     # Set up method
