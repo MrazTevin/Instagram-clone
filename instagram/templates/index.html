@@ -1,4 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1 class="text-center text-warning">Welcome to my Instagram clone</h1>
+
+<div class="container">
+    {% for image in images %}
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md col-lg-6">
+          
+            <h3>{{image.image_name}}</h3>
+            <h4>{{image.image_caption}}</h4>
+            <h5>{{image.comments}}</h5>
+        </div>
+    </div>
+     {% empty %}
+    <div class="row">
+        <h2 class="text-center">There No Images</h2>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
