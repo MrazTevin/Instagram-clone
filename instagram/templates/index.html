@@ -6,7 +6,7 @@
     {% for image in images %}
     <div class="row">
         <div class="col-xs-6 col-sm-6 col-md col-lg-6">
-            <img src="{{image.image_url}}" class="img-reponsive" alt="image">
+            <img src="{{image.image.url}}" class="img-reponsive" alt="image">
             <h3>{{image.image_name}}</h3>
             <h4>{{image.image_caption}}</h4>
             <h5>{{image.comments}}</h5>
