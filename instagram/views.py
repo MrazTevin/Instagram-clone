@@ -11,4 +11,5 @@ def home(request):
     return HttpResponse('lets ride fun with simple insta')  
 
 def picture(request,image_id):
+    picture = Image.objects.get(id = image_id)
     return render(request,'picture.html',{'picture':picture})
