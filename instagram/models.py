@@ -7,14 +7,11 @@ class tag(models.Model):
         return self.name
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'photos')
     image_name = models.CharField(max_length=30)
     image_caption = models.CharField(max_length=255)
     comments = models.TextField()
     tags = models.ManyToManyField(tag)
-
-
-
+    image = models.ImageField(upload_to='photos/', blank=True)
 
     def __str__(self):
         return self.image_name 
@@ -30,6 +27,6 @@ class Image(models.Model):
         return cls.objects.update()
    
     @classmethod
-    def image(cls):
+    def get_image(cls):
        return cls.objects.get(id=1)
    
