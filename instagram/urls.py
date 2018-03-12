@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^home/$',views.home,name='home'),
     url(r'^picture/(\d+)',views.picture,name='picture'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^logout/$',views.logout,{"next_page"':'/'})
+    url(r'^logout/$',views.logout,{"next_page": '/'})
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
