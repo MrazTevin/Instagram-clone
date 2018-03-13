@@ -7,5 +7,10 @@
 <div class="row">
     <h1 class="text-center">{{image.name}}</h1>
 </div>
+<div class="row">
+    {% autoescape on %} {{image.post| safe}} {% endautoescape %}
+
+</div>
 </div>
 {% endblock %}
+
