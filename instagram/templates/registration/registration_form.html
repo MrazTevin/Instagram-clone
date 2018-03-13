@@ -1,11 +1,12 @@
 {%extends "registration/base.html"%} {% load bootstrap3 %}{% load static %}{% block content %}
 <div class="container">
-    {% comment %} <div class="row">
+    {% comment %}
+    <div class="row">
         <div class="col-md-7">
-            
+
         </div>
 
-        
+
     </div> {% endcomment %}
     <div class="row">
         <!-- Empty div -->
@@ -30,14 +31,19 @@
                         </div>
 
                         <input type="hidden" name="next" value="{{next}}">
+                        <div>
+                        </div>
 
                     </form>
+                    <div class="card">
+                        <p>Already have an account?</p>
+                        <a href="/accounts/login"><button type="button" class="btn btn-danger">Sign In</button></a>
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
-{% endblock %}
-<div class="row">
-    
+        {% endblock %}
+        <div class="row">
