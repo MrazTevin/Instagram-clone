@@ -9,7 +9,8 @@ urlpatterns = [
     url(r'^$',views.welcome,name='welcome'),
     url(r'^home/$',views.home,name='home'),
     url(r'^picture/(\d+)',views.picture,name='picture'),
-    url(r'^new/image$', views.new_picture, name = 'new-picture')
+    url(r'^new/image$', views.new_image, name = 'new-image')
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
