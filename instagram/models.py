@@ -1,5 +1,8 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+from tinymce.models import HTMLField
 
+User = get_user_model()
 # Create your models here.
 class tag(models.Model):
     name = models.CharField(max_length=30)
@@ -12,9 +15,12 @@ class Image(models.Model):
     comments = models.TextField()
     tags = models.ManyToManyField(tag)
     image = models.ImageField(upload_to='photos/', blank=True)
+    userprofile = models.ForeignKey(User,blank = True, default=1)
+    # post = HTMLField(blank = True)
 
     def __str__(self):
-        return self.image_name 
+        return self.image_name2
+
     
     def save_image(self):
         self.save()
@@ -41,3 +47,4 @@ class UserProfile(models.Model):
     
    def save_userprofile(self):
         self.save()
+
