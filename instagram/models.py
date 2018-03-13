@@ -30,3 +30,9 @@ class Image(models.Model):
     def get_image(cls):
        return cls.objects.get(id=1)
    
+class UserProfile(models.Model):
+   profile_photo = models.ImageField(upload_to='photos/', blank = True)
+   first_name = models.CharField(max_length =30)
+   last_name = models.CharField(max_length = 30)
+   email  = models.EmailField()
+   
