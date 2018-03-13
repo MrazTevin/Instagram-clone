@@ -16,7 +16,7 @@ class Image(models.Model):
     tags = models.ManyToManyField(tag)
     image = models.ImageField(upload_to='photos/', blank=True)
     userprofile = models.ForeignKey(User,blank = True, default=1)
-    # post = HTMLField(blank = True)
+    post = HTMLField(blank = True)
 
     def __str__(self):
         return self.image_name2
