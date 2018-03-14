@@ -1,10 +1,10 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from . models import Image,tag
 from django.contrib.auth.decorators import login_required
 from .forms import NewImageForm
 # Create your views here.
-
 
 @login_required(login_url='/accounts/register')
 def welcome(request):
@@ -28,6 +28,7 @@ def new_image(request):
             image = form.save(commit=False)
             image.UserProfile = current_user
             image.save()
+            return redirect('welcome')
     else:
         form = NewImageForm()
     return render(request, 'new_image.html', {"form": form})
