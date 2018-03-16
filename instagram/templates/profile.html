@@ -4,13 +4,35 @@
 <h2 class="profile" style="color:red;">Profile section</h2>
 <div class="container coke">
   <div class="row">
+    <div class="col-md-4 col-md-4">
     <div class="bond007">
 {% for item in user %}
 <!-- <h1>{{item.first_name}}</h1> -->
-<img src="{{item.profile_photo.url}}" class="img-responsive  img-circle" alt="image">
+<img src="{{item.profile_photo.url}}" class="img-responsiven img-circle" alt="image">
+{% comment %} <button class="btn btn-default" data-toggle="modal" data-target="#myModal">Change profile photo</button> {% endcomment %}
+<!--Modal-->
+<a class="uk-button uk-button-default" href="#modal-center" uk-toggle>Open</a>
+
+<div id="modal-center" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <h1 class="text-danger"style="text-align:center;">Change Profile Photo</h1>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <hr>
+
+  </div>
+</div>
+</div>
 </div>
 </div>
 
 {% endfor %}
 </div>
 {% endblock %}
+
+
