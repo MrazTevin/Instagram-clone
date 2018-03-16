@@ -1,49 +1,43 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1 class="text-center text-warning">Welcome to my Instagram clone</h1>
 
 <div class="container">
-    {% for image in images %}
-    <div class="row">
-        <div class="uk-card uk-card-default uk-width-1-2@m">
-            <div class="uk-card-header">
-                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                    <div class="uk-width-auto">
-                        <img class="uk-border-circle" width="40" height="40" src="../docs/images/avatar.jpg">
-                    </div>
-                    <div class="uk-width-expand">
-                        <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-                        <p class="uk-text-meta uk-margin-remove-top">
-                            <time datetime="2016-04-01T19:00">April 01, 2016</time>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-card-body">
-                <img src="{{image.image.url}}" class="img-responsive" alt="image">
-            </div>
-            <div class="uk-card-footer">
-                <a href="#" class="uk-button uk-button-text">Read more</a>
-            </div>
+  {% for image in images %}
+  <div class="row">
+    <div class="uk-card uk-card-default center-block uk-margin uk-margin-large-bottom uk-width-1-2@m" style="align:center;">
+      <div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-auto">
+            <img class="uk-border-circle" width="40" height="40" src="../docs/images/avatar.jpg">
+          </div>
+          <div class="uk-width-expand">
+            <h3 class="uk-card-title uk-margin-remove-bottom">{{userprofile_id}}</h3>
+            <p class="uk-text-meta uk-margin-remove-top">
+              <time datetime="2016-04-01T19:00">April 01, 2016</time>
+            </p>
+          </div>
         </div>
-        {% comment %} <div class="col-md-12 col-md-12" style="display:inline; align-content:center;">
-            <img src="{{image.image.url}}" class="img-reponsive" alt="image">
-            <h3>{{image.image_name}}</h3>
-            <h4>{{image.image_caption}}</h4>
-           <a href ="picture/{{image.id}}"<h5>{{image.comments}}</h5></a>
-        </div> {% endcomment %}
-        
+      </div>
+      <div class="uk-card-body">
+        <img src="{{image.image.url}}" class="img-responsive" alt="image" style="width:100%">
+        <hr>
+        <p>{{image.image_caption}}</p>
+      </div>
+      <div class="uk-card-footer">
+        <a href="#" class="uk-button uk-button-text">Read more</a>
+      </div>
     </div>
+    {% comment %}
+    <div class="col-md-12 col-md-12" style="display:inline; align-content:center;">
+      <img src="{{image.image.url}}" class="img-reponsive" alt="image">
+      <h3>{{image.image_name}}</h3>
+      <h4>{{image.image_caption}}</h4>
+      <a href="picture/{{image.id}}" <h5>{{image.comments}}</h5></a>
+    </div> {% endcomment %}
 
-    {% endfor %}
+  </div>
+
+  {% endfor %}
 </div>
 
 {% endblock %}
-
-
-
-
-
-
-
-

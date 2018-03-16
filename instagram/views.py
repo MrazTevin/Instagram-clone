@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.http import HttpResponse
-from . models import Image,tag
+from . models import Image,tag,UserProfile
 from django.contrib.auth.decorators import login_required
 from .forms import NewImageForm
 # Create your views here.
@@ -33,3 +33,6 @@ def new_image(request):
         form = NewImageForm()
     return render(request, 'new_image.html', {"form": form})
 
+def profile(request):
+    user = UserProfile.objects.all()
+    return render(request, 'profile.html', {"user": user})

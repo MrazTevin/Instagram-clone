@@ -11,6 +11,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
+                img(src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png").logo
                 <a class="navbar-brand" href="{% url 'welcome' %}">Instagram</a>
             </div>
             <div class="col-sm-4 col-md-4" style="margin-left:350px;">
@@ -29,7 +30,7 @@
             <div class="col-sm-6 col-md-6">
                 {% if user.is_authenticated %}
                 <ul>
-                    <li class="dropdown">
+                    <li class="dropdown float-right">
                         <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
                             <span class="caret"></span>
                         </a>
@@ -44,7 +45,7 @@
                                 <a href="/logout">Logout</a>
                             </li>
                             <li>
-                                <a href="{%url 'new-image'}">Logout</a>
+                                <a href="{%url 'new-image'%}">New Image</a>
                             </li>
                         </ul>
                     </li>
@@ -60,3 +61,7 @@
 </body>
 
 </html>
+
+
+
+

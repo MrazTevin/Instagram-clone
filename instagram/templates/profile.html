@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="coke">Tevin Milla is a Champ</h1>
+<h2 class="profile" style="color:red;">Profile section</h2>
+<div class="container coke">
+  <div class="row">
+    <div class="bond007">
+{% for item in user %}
+<!-- <h1>{{item.first_name}}</h1> -->
+<img src="{{item.profile_photo.url}}" class="img-responsive  img-circle" alt="image">
+</div>
+</div>
+
+{% endfor %}
+</div>
+{% endblock %}

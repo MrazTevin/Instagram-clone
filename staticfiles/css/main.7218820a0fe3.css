@@ -1,0 +1,20 @@
+h1 {
+    font-style: Monospace;
+    text-color: red;
+}
+.bond007 {
+  border-radius:50%;
+  height:152px;
+  width :152px;
+}
+
+/* .img-fa{
+  height: 152px;
+  width: 152px;
+  display: inline;
+  margin: 0 auto;
+} */
+.coke {
+  color: red;
+  font-family: monospace;
+}
