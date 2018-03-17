@@ -1,13 +1,17 @@
-h1 {
-  font-style: Monospace;
+
+h1{
   color: red;
 }
-
 .coke {
-  color: red;
+  color: green ;
   font-family: monospace;
 }
 
 .profile {
   color: green;
+}
+.img-fa {
+  border-radius : 50%;
+  width:152px;
+  max-height:152px;
 }
