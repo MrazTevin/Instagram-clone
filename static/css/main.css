@@ -1,49 +1,54 @@
-
-h1{
+h1 {
   color: red;
 }
+
 .coke {
-  color: green ;
+  color: green;
   font-family: monospace;
 }
 
 .profile {
   color: green;
 }
+
 .img-fa {
-  border-radius : 50%;
-  width:152px;
-  max-height:152px;
+  border-radius: 50%;
+  width: 152px;
+  max-height: 152px;
 }
 
- #middle {
- display:inline-block;
- margin:0 auto;
- min-width: 600px;
- margin-top:30px;
+#middle {
+  display: inline-block;
+  margin: 0 auto;
+  min-width: 600px;
+  margin-top: 60px;
 }
-.navbar-default{
-  width:100%;
-  text-align:center;
-  border-bottom:1px solid #e3e3e3;
-  padding-bottom:30px;
+
+.navbar-default {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #e3e3e3;
+  padding-top:10px;
+  padding-bottom: 10px;
 }
-#right{
-  float:right;
+
+#right {
+  float: right;
   /* width:120px; */
-  padding-left:15px;
-
-}
-#logo-name {
-  float: left;
-  width: 120px;
   padding-left: 15px;
 }
 
+#logo-name {
+  float: left;
+  width: 150px;
+  padding-left: 15px;
+  img-size:80px;
+}
+
 #logo-icon {
+  height:80px;
   width: 30px;
   padding-right: 20px;
-  padding-top: 3px;
-  border-right: 1px solid black;
+  border-right: 4px solid black;
   float: left;
 }
