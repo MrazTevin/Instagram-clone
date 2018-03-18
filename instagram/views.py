@@ -4,6 +4,11 @@ from django.http import HttpResponse
 from . models import Image,tag,UserProfile
 from django.contrib.auth.decorators import login_required
 from .forms import NewImageForm
+from .forms import UploadFileForm
+from django.http import HttpResponseRedirect
+# from f import handle_uploaded_file
+
+
 # Create your views here.
 
 @login_required(login_url='/accounts/register')
@@ -36,3 +41,19 @@ def new_image(request):
 def profile(request):
     user = UserProfile.objects.all()
     return render(request, 'profile.html', {"user": user})
+
+
+def upload_file(request):
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            handle_uploaded_file(request.FILES['file'])
+            return HttpResponseRedirect('/success/url/')
+    else:
+        form = UploadFileForm()
+    return render(request, 'upload.html', {'form': form})
+
+def handle_uploaded_file(f):
+    with open('media/photos', 'wb+')as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
