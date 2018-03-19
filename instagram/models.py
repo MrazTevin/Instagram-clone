@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from tinymce.models import HTMLField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+# from django.contrib.auth.models import UserManager
 
 User = get_user_model()
 # Create your models here.
@@ -46,22 +47,21 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     profile_photo = models.ImageField(upload_to='photos/', blank=True)
 
-
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.created(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
-
     def __str__(self):
         return self.first_name
 
     def save_profile(self):
         self.save()
+    
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
 
 
 class Comment(models.Model):
@@ -71,9 +71,9 @@ class Comment(models.Model):
     create = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.user
+
     def approved(self):
         self.approved = True
         self.save()
-
-    def __str__(self):
-        return self.user
