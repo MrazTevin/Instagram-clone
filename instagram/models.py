@@ -20,7 +20,7 @@ class Image(models.Model):
     image_caption = models.CharField(max_length=255)
     tags = models.ManyToManyField(tag)
     image = models.ImageField(upload_to='photos/', blank=True)
-    userprofile = models.ForeignKey(User, blank=True, default=1)
+    profile = models.ForeignKey(User, blank=True, default=1)
     post = HTMLField()
 
     def __str__(self):
@@ -41,16 +41,26 @@ class Image(models.Model):
         return cls.objects.get(id=1)
 
 
-class UserProfile(models.Model):
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
     profile_photo = models.ImageField(upload_to='photos/', blank=True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField()
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.created(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
 
     def __str__(self):
         return self.first_name
 
-    def save_userprofile(self):
+    def save_profile(self):
         self.save()
 
 
