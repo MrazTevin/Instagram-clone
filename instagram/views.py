@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewImageForm
 from .forms import UploadFileForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth import User
 # from f import handle_uploaded_file
 
 
@@ -61,3 +62,8 @@ def handle_uploaded_file(f):
     with open('media/photos', 'wb+')as destination:
         for chunk in f.chunks():
             destination.write(chunk)
+
+def update_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    user.profile.bio = 'lorem ipsum dollar sit amet'
+    user.save()
