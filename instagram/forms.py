@@ -1,4 +1,4 @@
-from .models import Image
+from .models import Image, User, Profile
 from django import forms
 
 
@@ -18,3 +18,4 @@ class UploadFileForm(forms.Form):
 # class CommentsForm(forms.ModelForm):
 #     class Meta:
 #         model = comment
+
