@@ -51,3 +51,18 @@ class UserProfile(models.Model):
 
     def save_userprofile(self):
         self.save()
+
+
+class Comment(models.Model):
+    image = models.ForeignKey(Image, related_name='comments')
+    user = models.CharField(max_length=250)
+    body = models.TextField()
+    create = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    def approved(self):
+        self.approved = True
+        self.save()
+
+    def __str__(self):
+        return self.user
