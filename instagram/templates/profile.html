@@ -1,27 +1,6 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 {% block content %}
-<div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
-   {% for item in user %}
-  <div>
-    <div>
-    <img src="{{item.profile_photo.url}}" class="img-responsive img-circle img-fa uk-animation-slide-right uk-animation-toggle uk-toggle"
-      alt="image" style="margin-left:250px;">
-     </div>
-  </div>
-  <div>
-    <div style="margin-right:750px;">
-     <h1>{{item.first_name}}</h1> 
-     <button class="btn btn-default float">Edit Profile</button>
-     
-    </div>
-  </div>
-  <div>
- 
-      <button class="btn btn-default">Edit Profile</button>
-      <a href="" uk-icon="icon: heart"></a>
-    
-  </div>
-  {% endfor %}
-</div>
-<hr>
+
+
 {% endblock %}
