@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image, tag, UserProfile, Comment
+from .models import Image, tag, Profile, Comment
 # Register your models here.
 
 
@@ -9,12 +9,11 @@ class ImageAdmin(admin.ModelAdmin):
 
 admin.site.register(Image)
 admin.site.register(tag)
-admin.site.register(UserProfile)
-admin.site.register(Comment)
+admin.site.register(Profile)
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = {'user', 'approved'}
+    list_display = ('user', 'approved')
 
 
 admin.site.register(Comment, CommentAdmin)
