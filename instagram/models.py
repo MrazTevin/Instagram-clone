@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from tinymce.models import HTMLField
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 User = get_user_model()
 # Create your models here.
@@ -16,14 +18,13 @@ class tag(models.Model):
 class Image(models.Model):
     image_name = models.CharField(max_length=30)
     image_caption = models.CharField(max_length=255)
-    comments = models.TextField()
     tags = models.ManyToManyField(tag)
     image = models.ImageField(upload_to='photos/', blank=True)
     userprofile = models.ForeignKey(User, blank=True, default=1)
     post = HTMLField()
 
     def __str__(self):
-        return self.image_name2
+        return self.image_name
 
     def save_image(self):
         self.save()
