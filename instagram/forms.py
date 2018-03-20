@@ -19,3 +19,12 @@ class UploadFileForm(forms.Form):
 #     class Meta:
 #         model = comment
 
+class UserForm(forms.ModelForm):
+    model = User
+    fields = {'first_name','last_name','email'}
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('bio', 'profile_photo')
+
