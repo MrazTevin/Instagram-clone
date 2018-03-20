@@ -34,11 +34,17 @@
 - This tests will enable us write methods that we need for our app to function, which we will include in our models file
 
 ```
-def save_location(self):
-      self.save()
-
-  def delete_location(self):
-      self.save()
+  def test_save_method(self):
+        self.family.save_image()
+        image = Image.objects.all()
+        self.assertTrue(len(image) > 0) 
+    
+    def test_delete_method(self):
+        self.family = Image(image_name='family')
+        self.family.save_image()
+        self.family.delete_image()
+        image = Image.objects.all() 
+        self.assertFalse(image)
 ```
 <hr>
 ## Built With
